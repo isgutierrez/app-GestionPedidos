@@ -19,6 +19,7 @@ const Button = ({
     success: 'bg-green-600 hover:bg-green-700 text-white shadow-md hover:shadow-lg',
     danger: 'bg-red-500 hover:bg-red-600 text-white shadow-md hover:shadow-lg',
     warning: 'bg-yellow-500 hover:bg-yellow-600 text-white shadow-md hover:shadow-lg',
+    dark: 'bg-gray-900 hover:bg-black text-white shadow-md hover:shadow-lg'
   };
 
   // Tamaños

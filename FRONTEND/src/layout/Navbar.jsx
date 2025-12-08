@@ -1,8 +1,13 @@
 import React from "react";
 import { FaShoppingCart } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import Button from "../components/button/Button";
+import { useCart } from "../context/CartContext";
 
 export const Navbar = () => {
+  const navigate = useNavigate();
+  const { totalItems } = useCart();
+
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,14 +25,14 @@ export const Navbar = () => {
           <div className="flex items-center gap-4">
             <Button 
               variant="ghost"
-              onClick={() => console.log('Ir a registro')}
+              onClick={() => navigate('/register')}
             >
               Registrarse
             </Button>
             
             <Button 
               variant="primary"
-              onClick={() => console.log('Ir a login')}
+              onClick={() => navigate('/login')}
             >
               Iniciar sesión
             </Button>
@@ -35,11 +40,11 @@ export const Navbar = () => {
             {/* Botón de carrito con contador */}
             <button 
               className="text-gray-700 hover:text-gray-900 relative transition-colors"
-              onClick={() => console.log('Abrir carrito')}
+              onClick={() => navigate('/checkout')}
             >
               <FaShoppingCart className="text-2xl" />
               <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                0
+                {Math.min(totalItems, 99)}
               </span>
             </button>
           </div>

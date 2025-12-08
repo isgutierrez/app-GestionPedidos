@@ -1,4 +1,4 @@
-import { FaPlus, FaShoppingCart } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 import Button from "../button/Button";
 
 const CardItem = ({
@@ -7,6 +7,7 @@ const CardItem = ({
   title,
   description,
   price,
+  category,
   discount = null, // Descuento opcional
   onAddToCart,
   className = "",
@@ -28,7 +29,17 @@ const CardItem = ({
 
   const handleClick = () => {
     if (onAddToCart) {
-      onAddToCart({ id, title, description, price: finalPrice, image });
+      onAddToCart({
+        id,
+        title,
+        description,
+        image,
+        price: finalPrice,
+        basePrice: price,
+        category,
+        discount,
+        currency,
+      });
     }
   };
 
