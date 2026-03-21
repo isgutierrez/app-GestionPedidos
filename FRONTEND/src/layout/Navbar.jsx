@@ -15,7 +15,7 @@ export const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <img 
-              src="src/assets/img/logo.png" 
+              src="./assets/img/logo.png" 
               alt="Mr. FOOD" 
               className="h-20 w-auto" 
             />

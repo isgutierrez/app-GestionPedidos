@@ -3,7 +3,7 @@ export const HeroSection = () => {
     <div className="relative bg-black overflow-hidden">
       {/* Imagen de fondo completa */}
       <img
-        src="src/assets/img/navbar.png"
+        src="./assets/img/navbar.png"
         alt="Mr. FOOD - Delicious food"
         className="w-full h-full object-cover"
       />
