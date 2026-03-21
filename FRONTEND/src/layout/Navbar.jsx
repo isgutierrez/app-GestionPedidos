@@ -1,8 +1,8 @@
-import React from "react";
 import { FaShoppingCart } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import Button from "../components/button/Button";
 import { useCart } from "../context/CartContext";
+import logo from '../assets/img/logo.png';
 
 export const Navbar = () => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ export const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <img 
-              src="./assets/img/logo.png" 
+              src={logo}
               alt="Mr. FOOD" 
               className="h-20 w-auto" 
             />
