@@ -5,6 +5,7 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+import com.app.backend.entity.EstadoPedido;
 
 @Entity
 @Table(name = "pedido")
@@ -35,14 +36,7 @@ public class Pedido {
     @Column(name = "id_mesa")
     private Integer idMesa;
 
-    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<DetallePedido> detalles;
 
-    public enum EstadoPedido {
-        pendiente,
-        en_preparacion,
-        listo,
-        entregado,
-        cancelado
-    }
 }

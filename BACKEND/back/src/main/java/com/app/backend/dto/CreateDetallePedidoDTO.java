@@ -1,10 +1,17 @@
 package com.app.backend.dto;
 
-import lombok.Data;
+import java.math.BigDecimal;
 
-@Data
 public class CreateDetallePedidoDTO {
-    private Integer idProducto;
+
+    private Long productoId;
     private Integer cantidad;
-    private String observaciones;
+
+    public Long getProductoId() {
+        return productoId;
+    }
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
 }
