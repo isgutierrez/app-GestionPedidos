@@ -1,0 +1,7 @@
+name: app-GestionPedidos
+type: java
+build:
+  commands:
+    - mvn clean install -DskipTests
+  outputDirectory: target
+start: java -jar target/backend-0.0.1-SNAPSHOT.jar
