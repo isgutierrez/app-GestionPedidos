@@ -20,8 +20,8 @@ const API_BASE_URL =
 const API_ORIGIN = (() => {
   const fallbackOrigin =
     typeof window !== 'undefined'
-      ? window.location.origin
-      : 'http://localhost:8080/';
+      ? globalThis.location.origin
+      : 'https://apppedidos-production-f088.up.railway.app/';
   try {
     const url = new URL(API_BASE_URL || fallbackOrigin);
     return `${url.protocol}//${url.host}/`;
